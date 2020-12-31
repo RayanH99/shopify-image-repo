@@ -90,3 +90,17 @@ def new_post():
         return redirect(url_for('home'))
         
     return render_template('new_post.html', title ='New Post', form=form)
+
+
+@app.route("/post/<int:post_id>/delete", methods=['POST'])
+@login_required
+def delete_post(post_id):
+    post = Post.query.get_or_404(post_id)
+    if post.author != current_user:
+        abort(403)
+    db.session.delete(post)
+    db.session.commit()
+    image_filepath = os.path.join(app.root_path, 'static/posted_imgs', post.content)
+    os.remove(image_filepath)
+    flash('Image has been deleted!', 'success')
+    return redirect(url_for('home'))

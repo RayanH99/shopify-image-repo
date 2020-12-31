@@ -62,6 +62,12 @@ a.article-title:hover {
   width: 50%;
 }
 
+.right {
+  position: absolute;
+  top: 0px;
+  right: 25px;
+}
+
 .article-metadata {
   padding-bottom: 1px;
   margin-bottom: 4px;
