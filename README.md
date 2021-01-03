@@ -22,7 +22,7 @@ After logging in, the user can use the navigation bar to visit the home page (po
 Posts can only be deleted by the user who has posted the image. In order to delete a post, the user must click on the post which will take them to another page. Here, the user will be allowed to delete the post, removing it from the database and the home page.
 
 ## Design Decisions
-Throughout the development of this project, there were several design decisions that were made. 
+There were several design decisions that were made throughout the development of this project.
 
 One such decision was to use a local file system to store images instead of storing the images in the database. Instead, the database would contain the path to the images in the filesystem, greatly reducing the load on the database. This is especially important when considering scalability, as the increase in traffic for the site would mean an exponential increase on the memory usage for the database had the images been stored in the database.
 
