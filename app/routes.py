@@ -92,6 +92,12 @@ def new_post():
     return render_template('new_post.html', title ='New Post', form=form)
 
 
+@app.route("/post/<int:post_id>")
+def post(post_id):
+    post = Post.query.get_or_404(post_id)
+    return render_template('post.html', title=post.title, post=post)
+    
+
 @app.route("/post/delete/<post_id>", methods=['POST'])
 @login_required
 def delete_post(post_id):
