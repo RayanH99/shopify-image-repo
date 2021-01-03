@@ -1,4 +1,4 @@
-from flask import render_template, url_for, flash, redirect
+from flask import render_template, url_for, flash, redirect, abort
 from app import app, db, bcrypt
 from app.forms import RegistrationForm, LoginForm, PostForm
 from app.models import User, Post
@@ -92,7 +92,7 @@ def new_post():
     return render_template('new_post.html', title ='New Post', form=form)
 
 
-@app.route("/post/<int:post_id>/delete", methods=['POST'])
+@app.route("/post/delete/<post_id>", methods=['POST'])
 @login_required
 def delete_post(post_id):
     post = Post.query.get_or_404(post_id)
