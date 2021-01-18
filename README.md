@@ -1,5 +1,5 @@
-# Shopify Challenge - Image Repo 
-This is a web application developed in Python using the Flask web framework. The application communicates with an SQL Database using the `flask-sqlalchemy` library to handle user authentication as well as basic create, read, and delete operations for posts.
+#  Image Repo - Shopify Backend Developer Challenge
+This is a web application developed in Python using the Flask web framework. The application communicates with a MySQL Database using the `flask-sqlalchemy` library to handle user authentication as well as basic create, read, and delete operations for posts.
 
 ## Project Setup
 In order to get started with the project, the repo will need to be cloned to your local system. 
